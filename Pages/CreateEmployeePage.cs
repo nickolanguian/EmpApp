@@ -19,6 +19,7 @@ namespace EmpApp.Pages
         IWebElement selectGrade => driver.FindElement(By.Id("Grade"));
         IWebElement txtEmailAddress => driver.FindElement(By.Id("Email"));
         IWebElement btnCreateEmployee => driver.FindElement(By.XPath("//button[contains(text(),'Create Employee')]"));
+        IWebElement btnCreateEmployee2 => driver.FindElement(By.XPath("//button[contains(text(),'Create Employee the 2nd')]"));
 
         public void CreateEmployee(string fullName, string age, string monthlySalary, string durationWorked, string grade, string emailAddress)
         {
