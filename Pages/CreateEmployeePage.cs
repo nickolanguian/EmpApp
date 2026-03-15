@@ -31,7 +31,7 @@ namespace EmpApp.Pages
                 txtDurationWorked.EnterText(durationWorked);
                 selectGrade.SelectDropdownByText(grade);
                 txtEmailAddress.EnterText(emailAddress);
-                //btnCreateEmployee.Click();
+                btnCreateEmployee.Click();
             }
         }
 
