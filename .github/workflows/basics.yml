@@ -4,7 +4,9 @@ on: push
 jobs:
   Selenium_Test_Job1:
     name: Selenium Test Job
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+    env:
+      SELENIUM_DRIVER: 'RemoveWebDriver'
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "This is running inside a ${{ runner.os }} server in Github."
@@ -14,6 +16,9 @@ jobs:
       - name: Execute during failure
         if: ${{failure()}}
         run: echo "Step is failed"
+      - name: Run Selenium Test
+        if: ${{env.SELENIUM_DRIVER=='RemoteWebDriver'}}
+        run: echo "Running test in Selenium grid setup"
 
   Selenium_Test_Job2:
     name: Selenium Test Job 2
