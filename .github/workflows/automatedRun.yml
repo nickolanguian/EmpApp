@@ -26,4 +26,4 @@ jobs:
       run: dotnet build #--configuration Release --no-restore
 
     - name: Run Selenium tests
-      run: dotnet test --filter "Category=loginpass" #--configuration Release --no-build --verbosity normal
+      run: dotnet test --filter "Category=loginfail" #--configuration Release --no-build --verbosity normal
