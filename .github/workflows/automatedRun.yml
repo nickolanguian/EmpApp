@@ -27,3 +27,10 @@ jobs:
 
     - name: Run Selenium tests
       run: dotnet test --filter "Category=loginfail" #--configuration Release --no-build --verbosity normal
+      
+    - name: Upload ExtentReports HTML
+      uses: actions/upload-artifact@v4
+      with:
+        name: extent-report
+        path: '**/ExtentReports/*.html'
+
