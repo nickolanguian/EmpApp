@@ -1,0 +1,29 @@
+name: Selenium C# Tests
+
+on:
+  push:
+    branches: [ "GithubActions" ]
+  pull_request:
+    branches: [ "GithubActions" ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'   # adjust to your project’s target version
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build solution
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Run Selenium tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
