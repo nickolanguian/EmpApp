@@ -6,7 +6,7 @@ jobs:
     name: Selenium Test Job
     runs-on: windows-latest
     env:
-      SELENIUM_DRIVER: 'RemoveWebDriver'
+      SELENIUM_DRIVER: 'RemoteWebDriver'
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "This is running inside a ${{ runner.os }} server in Github."
