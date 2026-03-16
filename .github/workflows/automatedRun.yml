@@ -32,5 +32,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: extent-report
-        path: '**/ExtentReports/*.html'
+        path: '**/LastRunReport/*.html'
 
